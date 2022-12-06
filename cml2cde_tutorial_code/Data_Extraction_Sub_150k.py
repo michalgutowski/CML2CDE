@@ -10,11 +10,11 @@ spark = SparkSession \
     .builder \
     .appName("Pyspark PPP ETL") \
     .config("spark.hadoop.fs.s3a.s3guard.ddb.region", "us-east-2")\
-    .config("spark.yarn.access.hadoopFileSystems", "s3a://demo-aws-go02")\
+    .config("spark.yarn.access.hadoopFileSystems", "s3a://goes-se-sandbox01")\
     .getOrCreate()  
     
 #Path of our file in S3
-input_path ='s3a://demo-aws-go02/datalake/cde-demo/PPP-Sub-150k-TX.csv'
+input_path ='s3a://goes-se-sandbox01/datalake/cde-demo/PPP-Sub-150k-TX.csv'
 
 #This is to deal with tables existing before running this code. Not needed if you're starting fresh.
 #spark.conf.set("spark.sql.legacy.allowCreatingManagedTableUsingNonemptyLocation","true")
